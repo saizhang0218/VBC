@@ -1,3 +1,5 @@
+# Pytorch implementation of "Efficient Communication in Multi-Agent Reinforcement Learning via Variance Based Control"
+
 1. This code is developed based on the source code of QMIX paper, which is available at: https://github.com/oxwhirl/pymarl
 
 2. To run the code, please install the SMAC (StarCraft Multi-Agent Challenge) first, which is available at: https://github.com/oxwhirl/smac, please then follow the instructions to install the StarCraft II client. Download StarCraft II into the 3rdparty folder and copy the maps necessary to run over.
