@@ -6,25 +6,20 @@
 
 3. The requirements.txt file can be used to install the necessary packages into a virtual environment.
 
-4. To run the code use the following command: python3 src/main.py --config=xxx_xxx --env-config=sc2 with env_args.map_name=xxx
+4. To run the code, use the following command: python3 src/main.py --config=xxx_xxx --env-config=sc2 with env_args.map_name=xxx
 
---config can be one of the following four options: vdn_6h_vs_8z,vdn_corridor,qmix_6h_vs_8z,qmix_corridor (corridor is the 6z_vs_24zerg scenario).
-For example 'vdn_6h_vs_8z' means 6h_vs_8z scenario with VDN
+--config can be one of the following four options: vdn_6h_vs_8z,vdn_corridor,qmix_6h_vs_8z,qmix_corridor (corridor is 6z_vs_24zerg scenario). For example 'vdn_6h_vs_8z' means 6h_vs_8z map with VDN as the mixing network.
 
 --env_args.map_name can be one of the following two options:6h_vs_8z,corridor (corridor is the 6z_vs_24zerg scenario)
 
 5. All the hyperparameters can be found at:  src/config/default.yaml, src/config/algs/*.yaml and src/config/envs/*.yaml
 
-6. The execution of the agent network can be found at: src/controllers/basic_controller_xxx_vbc.py, where xxx is the name of the map. For example, the execution of the agent network for 2s3z can be found at: src/controllers/basic_controller_2s3z_vbc.py
+6. The execution of the agent network can be found at: src/controllers/basic_controller_xxx_vbc.py, where xxx is the name of the map. For example, the execution of the agent network for 6h_vs_8z can be found at: src/controllers/basic_controller_6h_vs_8z_vbc.py
 
-7. The learning of the agent network can be found at: src/learners/q_learner_xxx_vbc.py, where xxx is the name of the map. For example, the learning of the agent network for 2s3z can be found at: src/learners/q_learner_2s3z_vbc.py
-     
-8. Model can be saved by setting “save_model = True” in “src/config/default.yaml”. You can also specify the frequency of saving model by changing the “save_model_interval” option in the config file. 
+7. The training of the agent network can be found at: src/learners/q_learner_xxx_vbc.py, where xxx is the name of the map. For example, the training of the agent network for 6h_vs_8z can be found at: src/learners/q_learner_6h_vs_8z_vbc.py
 
-9. To load model, specifying the path of the saved model by filling in the `checkpoint_path` parameter in the default.yaml.
+8. To load model, specifying the path of the saved model by filling in the `checkpoint_path` parameter in the default.yaml.
 
-10. The test accuracy will be saved in the 'xxx_accuracy_list.txt', where xxx is the local_results_path parameter in default.yaml.
+9. The test accuracy will be saved in the 'xxx_accuracy_list.txt', where xxx is the local_results_path parameter in default.yaml.
 
-11. Communication overhead will be saved in the 'xxx_comm_overhead.txt', where xxx is the local_results_path parameter in default.yaml. 
-
-12. The code is run with pytorch 0.4.1, later version may cause an error. 
+10. Communication overhead \beta will be saved in the 'xxx_comm_overhead.txt', where xxx is the local_results_path parameter in default.yaml. 
