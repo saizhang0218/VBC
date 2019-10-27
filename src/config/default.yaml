@@ -38,8 +38,8 @@ optim_eps: 0.00001 # RMSProp epsilon
 grad_norm_clip: 10 # Reduce magnitude of gradients above this L2 norm
 record_comm_overhead: True  # select true to record the communication overhead
 normalization_const: 1.7  # This is the lambda defind in equation 1 in the paper, controls the weight of the loss on standard deviation
-delta1: 0.23  # the threshold for corridor 
-delta2: 0.2   
+delta1: 10.0  # the threshold for corridor 
+delta2: 0.0   
 ## --- Agent parameters ---
 agent: "rnn" # Default rnn agent
 rnn_hidden_dim: 64 # Size of hidden state for default rnn agent
