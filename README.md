@@ -24,3 +24,7 @@ For example 'vdn_6h_vs_8z' means 6h_vs_8z scenario with VDN
 9. To load model, specifying the path of the saved model by filling in the `checkpoint_path` parameter in the default.yaml.
 
 10. The test accuracy will be saved in the 'xxx_accuracy_list.txt', where xxx is the local_results_path parameter in default.yaml.
+
+11. Communication overhead will be saved in the 'xxx_comm_overhead.txt', where xxx is the local_results_path parameter in default.yaml. 
+
+12. The code is run with pytorch 0.4.1, later version may cause an error. 
