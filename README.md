@@ -1,6 +1,6 @@
 ## Pytorch implementation of "Efficient Communication in Multi-Agent Reinforcement Learning via Variance Based Control"
 
-This is the github repo for the work "Efficient Communication in Multi-Agent Reinforcement Learning via Variance Based Control" published in NeurIPS 2019.
+This is the github repo for the work "Efficient Communication in Multi-Agent Reinforcement Learning via Variance Based Control" published in NeurIPS 2019 (https://arxiv.org/abs/1909.02682).
 
 
 ### Prerequisites
