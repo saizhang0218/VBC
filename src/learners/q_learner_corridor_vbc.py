@@ -83,12 +83,12 @@ class QLearner_corridor:
         for t in range(batch.max_seq_length):
             target_agent_local_outputs, target_hidden_states = self.target_mac.forward(batch, t=t)
     
-            dummy0 = self.mac.env_blender(target_hidden_states[:,0,:].view(32,-1)) 
-            dummy1 = self.mac.env_blender(target_hidden_states[:,1,:].view(32,-1)) 
-            dummy2 = self.mac.env_blender(target_hidden_states[:,2,:].view(32,-1)) 
-            dummy3 = self.mac.env_blender(target_hidden_states[:,3,:].view(32,-1)) 
-            dummy4 = self.mac.env_blender(target_hidden_states[:,4,:].view(32,-1))
-            dummy5 = self.mac.env_blender(target_hidden_states[:,5,:].view(32,-1)) 
+            dummy0 = self.target_mac.env_blender(target_hidden_states[:,0,:].view(32,-1)) 
+            dummy1 = self.target_mac.env_blender(target_hidden_states[:,1,:].view(32,-1)) 
+            dummy2 = self.target_mac.env_blender(target_hidden_states[:,2,:].view(32,-1)) 
+            dummy3 = self.target_mac.env_blender(target_hidden_states[:,3,:].view(32,-1)) 
+            dummy4 = self.target_mac.env_blender(target_hidden_states[:,4,:].view(32,-1))
+            dummy5 = self.target_mac.env_blender(target_hidden_states[:,5,:].view(32,-1)) 
             
             target_agent0 = (dummy1 + dummy2 + dummy3 + dummy4 + dummy5)/5.0
             target_agent1 = (dummy0 + dummy2 + dummy3 + dummy4 + dummy5)/5.0
