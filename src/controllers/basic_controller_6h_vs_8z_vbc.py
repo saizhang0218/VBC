@@ -98,7 +98,6 @@ class BasicMAC_6h_vs_8z:
             if(th.std(dummy5[i,:], dim=0)<self.delta2):
                 dummy5[i:,] = th.zeros(1,14)
                 num_eliminated_we[i,5] = 0
-        #print(num_eliminated)
         num_eliminated = th.stack([num_eliminated_we.sum(1)]*6).t() - num_eliminated_we
         agent0 = (dummy1 + dummy2 + dummy3 + dummy4 + dummy5)/5.0
         agent1 = (dummy0 + dummy2 + dummy3 + dummy4 + dummy5)/5.0
@@ -109,14 +108,8 @@ class BasicMAC_6h_vs_8z:
         
         agent_global_outputs =th.cat((agent0.view((8,1,14)),agent1.view((8,1,14)),agent2.view((8,1,14)),agent3.view((8,1,14)),agent4.view((8,1,14)),agent5.view((8,1,14))),1)
         largest = th.topk(agent_local_outputs,2, dim = 2)
-        #print('agent_local_outputs shape is: ' + str(agent_local_outputs.shape))
-        #print('largest shape is: ' + str(largest[0]))
         criteria = th.abs(largest[0][:,:,0]-largest[0][:,:,1])
         binary_matrix = th.stack([(criteria > self.delta1).type(th.cuda.FloatTensor)]*14,-1)   #duplicate along the third dimension
-        #print(criteria.shape)
-        #print(num_eliminated)
-        #print((criteria < self.delta1).type(th.cuda.FloatTensor))
-        #print('\n\n\n\n')
         comm_rate_local = ((criteria < self.delta1).type(th.cuda.FloatTensor)).sum()/(6*8) 
         comm_rate_among = (num_eliminated_we.cuda()).sum()/(6*8) 
         comm_rate = (num_eliminated.cuda()*(criteria < self.delta1).type(th.cuda.FloatTensor)).sum()/(6*5*8) 
@@ -134,7 +127,6 @@ class BasicMAC_6h_vs_8z:
         agent_outs, self.hidden_states = self.agent(agent_inputs, self.hidden_states)   
         # Softmax the agent outputs if they're policy logits
         if self.agent_output_type == "pi_logits":
-            print('does not enterring here!!!!!!!!!!!!!!')
             if getattr(self.args, "mask_before_softmax", True):
                 # Make the logits for unavailable actions very negative to minimise their affect on the softmax
                 reshaped_avail_actions = avail_actions.reshape(ep_batch.batch_size * self.n_agents, -1)
