@@ -6,9 +6,8 @@ This repository is the official implementation of [Succinct and Robust Multi-Age
 
 ## Requirements
 > 📋To run the code, please install the SMAC (StarCraft Multi-Agent Challenge) first, which is available at: https://github.com/oxwhirl/smac, please then follow the instructions to install the StarCraft II client. Download StarCraft II into the 3rdparty folder and copy the maps necessary to run over.
-To install requirements:
 
-> 📋This code is developed based on the source code of QMIX paper, which is available at: https://github.com/oxwhirl/pymarl.
+> 📋This code is developed based on the source code of QMIX, which is available at: https://github.com/oxwhirl/pymarl.
 
 > 📋 To install the requirements, run:
 ```setup
@@ -39,8 +38,8 @@ python3 src/main.py --config=xxx --env-config=sc2 with env_args.map_name=xxx
 
 > 📋The training of agent networks can be found at: `src/learners/q_learner_xxx.py`, where xxx is the name of the map. For example, the training of the agent network for 3s_vs_4z can be found at: `src/learners/q_learner_3s_vs_4z.py`
 
-> 📋Model can be saved by setting `save_model = True` in `src/config/default.yaml`. You can also specify the frequency of saving model by changing the `save_model_interval` option in the config file. 
+> 📋Model can be saved by setting `save_model = True` in `src/config/default.yaml`. You can also specify the frequency of the saving by changing the `save_model_interval` option in the config file. 
 
-> 📋To load model, specifying the path of the saved model by filling in the `checkpoint_path` parameter in the default.yaml.
+> 📋To load model, specifying the path of the saved model by filling in the `checkpoint_path` parameter in the `src/config/default.yaml`.
 
 
