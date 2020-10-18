@@ -1,6 +1,6 @@
 # Succinct and Robust Multi-Agent Communication With Temporal Message Control
 
-This repository is the official implementation of [Succinct and Robust Multi-Agent Communication With Temporal Message Control]. 
+This repository is the official implementation of "Succinct and Robust Multi-Agent Communication With Temporal Message Control" published in NeurIPS 2020. 
 
 > 📋A video demo is available at: https://tmcpaper.github.io/tmc/
 
