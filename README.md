@@ -1,6 +1,6 @@
 ## Pytorch implementation of "Efficient Communication in Multi-Agent Reinforcement Learning via Variance Based Control"
 
-This is the github repo for the work "Succinct and Robust Multi-Agent CommunicationWith Temporal Message Control" published in NeurIPS 2019 (https://arxiv.org/abs/1909.02682). A video demo is available at: https://bit.ly/2VFkvCZ.
+This is the github repo for the work "Succinct and Robust Multi-Agent Communication With Temporal Message Control" published in NeurIPS 2019 (https://arxiv.org/abs/1909.02682). A video demo is available at: https://bit.ly/2VFkvCZ.
 
 ### Prerequisites
 1. To run the code, please install the SMAC (StarCraft Multi-Agent Challenge) first, which is available at: https://github.com/oxwhirl/smac, please then follow the instructions to install the StarCraft II client. Download StarCraft II into the 3rdparty folder and copy the maps necessary to run over.
